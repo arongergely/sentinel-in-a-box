@@ -49,7 +49,7 @@ create-infra:
 	aws cloudformation create-stack \
 		--region ap-southeast-2 \
 		--stack-name odc-test \
-		--template-body file://opendatacube-test.yml \
+		--template-body file://cube-in-a-box-cloudformation.yml \
 		--parameter file://parameters.json \
 		--tags Key=Name,Value=OpenDataCube \
 		--capabilities CAPABILITY_NAMED_IAM
