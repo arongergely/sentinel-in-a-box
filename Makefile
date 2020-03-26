@@ -47,7 +47,7 @@ upload-s3:
 # This section can be used to deploy onto CloudFormation instead of the 'magic link'
 create-infra:
 	aws cloudformation create-stack \
-		--region ap-southeast-2 \
+		--region eu-central-1 \
 		--stack-name odc-test \
 		--template-body file://cube-in-a-box-cloudformation.yml \
 		--parameter file://parameters.json \

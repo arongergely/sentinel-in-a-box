@@ -40,14 +40,16 @@ Parameters:
   Region:
     Description: The AWS region to deploy in
     Type: String
-    Default: us-west-2
-    AllowedValues: [us-west-2, ap-southeast-2]
+    Default: eu-central-1
+    AllowedValues: [us-west-2, ap-southeast-2, eu-central-1]
 Mappings:
   RegionMap:
     us-west-2:
       "HVM64": "ami-04ef7170e45541f07"
     ap-southeast-2:
       "HVM64": "ami-033c54f661460cfd2"
+    eu-central-1:
+      "HVM64": "ami-0b6f46ba4d94838a0"
 Resources:
   EC2Instance:
     Type: AWS::EC2::Instance
