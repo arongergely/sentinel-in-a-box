@@ -23,6 +23,7 @@ services:
       - "80:8888"
     volumes:
       - ./scripts:/opt/odc/scripts
+      - ./products:/opt/odc/products
       - ./data:/opt/odc/data
       - ./notebooks:/notebooks
     restart: always
