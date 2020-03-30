@@ -79,7 +79,6 @@ Resources:
           unzip /tmp/archive.zip
           mv sentinel-in-a-box-sentinel2-frankfurt /opt/odc
           # We need to remove some local vars. This is a bit of a hack...
-          sed --in-place '/AWS_/d' /opt/odc/docker-compose.yml
           sed --in-place 's/secretpassword/${SecretPassword}/g' /opt/odc/docker-compose.yml
           # We need write access in these places
           chmod -R 777 /opt/odc/notebooks
@@ -141,10 +140,10 @@ Resources:
         Statement:
         - Effect: Allow
           Action: ["S3:ListBucket"]
-          Resource: ["arn:aws:s3:::landsat-pds"]
+          Resource: ["arn:aws:s3:::sentinel-s2-l2a"]
         - Effect: Allow
           Action: ["S3:GetObject"]
-          Resource: ["arn:aws:s3:::landsat-pds/*"]
+          Resource: ["arn:aws:s3:::sentinel-s2-l2a/*"]
       Roles:
       - !Ref ODCRole
   ODCInstanceProfile:
